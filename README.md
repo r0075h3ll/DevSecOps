@@ -1,7 +1,8 @@
-## Challenges
+## DevSecOps
 
-Commits to this repository will be mostly about my endeavours in the world of CS/Programming/Hacking. Each directory/tree in this repo is going to have writeups/notes and/or source files that I'll curate as a part of the learning process.
+This repository contains content curated/created by me, related to DevSecOps in attempt to get good at it. DevSecOps works around SAST, DAST, etc., and a lot of automation - this repository is going to be a warehouse for all such required subjects.
 
-### Contents
+### Catalog
 
 - [JavaScript Security Series](/JavaScript-Security-Series)
+- [Semgrep Rules](/Semgrep-Rules)
