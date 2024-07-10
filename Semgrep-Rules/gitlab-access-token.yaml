@@ -1,0 +1,27 @@
+rules:
+  - id: ransom
+    message: >-
+      Gitlab Credentials Found
+    metadata:
+      category: security
+      cwe:
+        - "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+      owasp:
+        - A3:2017-Sensitive Data Exposure
+        - A2:2021–Cryptographic Failures
+      references:
+        - https://cwe.mitre.org/data/definitions/200.html
+        - https://owasp.org/Top10/A02_2021-Cryptographic_Failures/
+    languages:
+      - yaml
+    severity: ERROR
+    patterns:
+      - pattern-either:
+        - pattern: |
+            gitlab-token: $X
+        - pattern: |
+            gitlab-access-token: $X
+        - pattern: |
+            trigger-token: $X
+      - focus-metavariable: $X
+      - pattern-regex: '(glpat-.{20}|glptt-(\w|\d){40})'
