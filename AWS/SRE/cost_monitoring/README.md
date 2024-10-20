@@ -15,7 +15,6 @@ Setup:
 - Create a billing alarm using CloudWatch by configuring the appropriate metrics
     - Select the created SNS topic as target
 
-
 Get notifications on Slack:
 - Create an incoming webhook for your slack app
 - Create environment variable for lambda
