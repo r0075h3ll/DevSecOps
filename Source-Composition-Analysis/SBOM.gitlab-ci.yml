@@ -1,0 +1,24 @@
+image: openjdk:8-jdk-alpine
+
+stages:
+  - build
+  - upload
+
+
+generate-sbom:
+  stage: build
+  script:
+    - cat ./sca.gradle >> ./build.gradle
+    - ./gradlew cleanBuild :cyclonedxBom
+  artifacts:
+    paths:
+      - ./build/reports/*.json
+
+
+upload-sbom:
+  stage: upload
+  script:
+   - curl -H "Authorization:\Bearer $API_KEY" https://scm-management-platform.com/v1/api/sbom/upload -F @./Cyclone*.json
+  needs:
+    - generate-sbom
+  when: manual

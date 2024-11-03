@@ -1,0 +1,22 @@
+plugins {
+    id 'org.cyclonedx.bom' version '1.10.0'
+}
+
+cyclonedxBom { // configure the settins a/c to your environment
+    includeConfigs = ["runtimeClasspath"]
+    skipConfigs = ["compileClasspath", "testCompileClasspath"]
+    skipProjects = [rootProject.name, "yourTestSubProject"]
+    projectType = "application"
+    schemaVersion = "1.6"
+    destination = file("build/reports")
+    outputName = "bom"
+    outputFormat = "json"
+    includeBomSerialNumber = false
+    includeLicenseText = false
+    includeMetadataResolution = true
+    componentVersion = "2.0.0"
+    componentName = "my-component"
+}
+
+
+// https://github.com/CycloneDX/cyclonedx-gradle-plugin
