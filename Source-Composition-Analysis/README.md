@@ -8,11 +8,12 @@ allows a security engineering team to assess risks effectively.
 As shift-left suggests the integration of security into developer workflows, so, let's see how we can implement SCA in Gitlab CI pipelines.
 
 Steps:
-1. Specify plugin configurations in `sca.gradle` 
-2. Include `SBOM.gitlab-ci.yml` in the CI config of a repository
+1. Include `'org.cyclonedx.bom'` plugin in the build script (`build.gradle`)
+2. Specify plugin configurations in `sca.gradle` 
+3. Include `SBOM.gitlab-ci.yml` in the CI config of a repository
 
 Futhermore, the jobs can be configured to run on
-- Push, MRs, etc. i.e. events
+- events
 - schedules
 
 
