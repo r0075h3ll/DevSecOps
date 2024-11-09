@@ -10,4 +10,6 @@ Steps:
 
 
 Features
-- [x] Stop all instances
+- [x] Stop all EC2 instances
+- [x] Purge orphaned EBS volumes
+- [ ] Migrate EBS volumes from `gp2` to `gp3`
