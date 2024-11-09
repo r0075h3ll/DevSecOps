@@ -39,3 +39,40 @@ def stop_instances(instance_ids: list):
             InstanceIds=instance_ids, Force=True)
     except Exception as e:
         logger.info(e)
+
+def create_ebs_snapshot(orphans: set):
+    logger.info("Running create_ebs_snapshot()")
+
+    for vol in orphans:
+        ec2_session.create_snapshot(Description=f"{vol} backup",VolumeId=vol)
+
+def purge_orphans():
+    logger.info("Running remove_orphans()")
+    volumes = ec2_session.describe_volumes()
+
+    logger.info(volumes)
+
+    orphans = set()
+
+    for vol in volumes["Volumes"]:
+        volume_id = vol["VolumeId"]
+
+        print("Volume ID: %s" % volume_id)
+        print("Volume Type: %s" % vol["VolumeType"])
+        print("Volume AZ: %s" % vol["AvailabilityZone"])
+
+        if (vol["Attachments"][0].get("InstanceId", False)) is False and vol["State"] == "available":
+            orphans.add(volume_id)
+
+    if orphans.__len__() != 0:
+        logger.info("Creating snapshots")
+        create_ebs_snapshot(orphans)
+
+        for v_id in orphans:
+            logger.info("Deleted %s" %
+            v_id)
+            resp = ec2_session.delete_volume(VolumeID=v_id)
+
+            logger.info(resp)
+    else:
+        logger.info("No orphaned EBS volumes")

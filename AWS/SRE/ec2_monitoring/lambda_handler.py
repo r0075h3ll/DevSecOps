@@ -1,4 +1,6 @@
 import json
+from errno import ECHILD
+
 import ec2
 import logging
 
@@ -10,8 +12,15 @@ def lambda_handler(event, context):
 
     logger.info(event)
 
-    running_instances = ec2.status()
-    ec2.stop_instances(running_instances)
+    try:
+        running_instances = ec2.status()
+
+        if len(running_instances) != 0:
+            ec2.stop_instances(running_instances)
+
+        ec2.purge_orphans()
+    except Exception as e:
+        logger.info(e, exc_info=True)
 
     return {
         "text": "EC2 Monitoring"
