@@ -1,6 +1,6 @@
 ## Source Composition Analysis for Java
 
-![pipeline](/design.png)
+![pipeline](/Source-Composition-Analysis/design.png)
 
 Visibility is often overlooked, but is rather an important part of DevSecOps. With the shift-left philosophy being a priority for organizations - in order to induce
 faster, and secure product releases, Source Composition Analysis (SCA) provides a heads-up on all the integrated third-party and OSS software components. It
