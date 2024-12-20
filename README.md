@@ -6,6 +6,7 @@ This repository contains content curated/created by me, related to DevSecOps in 
 
 - [AWS](/AWS)
 - [Automation](/Automation)
+- [Github Workflows and Actions](/Workflows-and-Actions/)
 - [Source Composition Analysis](/Source-Composition-Analysis/)
 - [Semgrep Rules](/Semgrep-Rules/)
 - [JavaScript Security Series](/JavaScript-Security-Series/)
