@@ -15,3 +15,7 @@ Deploy cost-explorer app
 cd cost-explorer
 serverless deploy
 ```
+
+## Upcoming
+
+- [ ] Service(s) that generated cost
