@@ -9,3 +9,9 @@ Configure serverless w/ AWS
 ```bash
 serverless config credentials --provider aws --key YOUR_AWS_ACCESS_KEY --secret YOUR_AWS_SECRET_KEY
 ```
+
+Deploy cost-explorer app
+```bash
+cd cost-explorer
+serverless deploy
+```
