@@ -19,4 +19,5 @@ serverless deploy
 
 ## Upcoming
 
-- [ ] Service(s) that generated cost
+- [ ] Get info about services that generated cost
+  - [ ] Ability to kill such services i.e. kill switch
