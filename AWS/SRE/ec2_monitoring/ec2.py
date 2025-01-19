@@ -1,4 +1,5 @@
 import logging
+
 import boto3
 
 logger = logging.getLogger()
@@ -16,17 +17,18 @@ def status():
 
     print(all_insts['Reservations'])
 
-    for instance in all_insts['Reservations'][0]['Instances']:
-        instance_id = instance.get('InstanceId', "unknown")
-        keyName = instance.get('KeyName', "unknown")
-        state = instance['State'].get("Name", "unknown")
+    for instances in all_insts['Reservations'][0]:
+        for instance in instances:
+            instance_id = instance.get('InstanceId', "unknown")
+            keyname = instance.get('KeyName', "unknown")
+            state = instance['State'].get("Name", "unknown")
 
-        print("Instance Name: ", keyName)
-        print("Instance ID: ", instance_id)
-        print("Instance State: ", state)
+            print("Instance Name: ", keyname)
+            print("Instance ID: ", instance_id)
+            print("Instance State: ", state)
 
-        if state == "running":
-            ids.append(instance_id)
+            if state == "running":
+                ids.append(instance_id)
 
     return ids
 
@@ -40,11 +42,13 @@ def stop_instances(instance_ids: list):
     except Exception as e:
         logger.info(e)
 
+
 def create_ebs_snapshot(orphans: set):
     logger.info("Running create_ebs_snapshot()")
 
     for vol in orphans:
-        ec2_session.create_snapshot(Description=f"{vol} backup",VolumeId=vol)
+        ec2_session.create_snapshot(Description=f"{vol} backup", VolumeId=vol)
+
 
 def purge_orphans():
     logger.info("Running remove_orphans()")
@@ -70,7 +74,7 @@ def purge_orphans():
 
         for v_id in orphans:
             logger.info("Deleted %s" %
-            v_id)
+                        v_id)
             resp = ec2_session.delete_volume(VolumeID=v_id)
 
             logger.info(resp)

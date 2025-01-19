@@ -1,16 +1,16 @@
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Actions": [
-				"ec2:DescribeInstances",
-				"ec2:StopInstances",
-				"ec2:DescribesVolumes",
-				"ec2:DeleteVolume",
-				"ec2:CreateSnapshot"
-			],
-			"Resource": "*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Actions": [
+        "ec2:DescribeInstances",
+        "ec2:StopInstances",
+        "ec2:DescribesVolumes",
+        "ec2:DeleteVolume",
+        "ec2:CreateSnapshot"
+      ],
+      "Resource": "*"
+    }
+  ]
 }

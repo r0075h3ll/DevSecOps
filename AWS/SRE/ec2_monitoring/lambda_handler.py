@@ -1,15 +1,12 @@
-import json
-from errno import ECHILD
+import logging
 
 import ec2
-import logging
 
 logger = logging.getLogger()
 logger.setLevel("INFO")
 
 
 def lambda_handler(event, context):
-
     logger.info(event)
 
     try:
