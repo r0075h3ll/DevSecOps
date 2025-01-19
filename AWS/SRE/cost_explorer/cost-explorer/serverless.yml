@@ -1,0 +1,17 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: r0075h3ll
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: cost-explorer
+
+provider:
+  name: aws
+  runtime: python3.12
+
+functions:
+  hello:
+    handler: handler.lambda_handler
+    events:
+      - eventBridge:
+          enabled: true
+          description: trigger cost explorer lambda at 2 A.M. everyday
+          schedule: cron(00 02 * * ? *)
