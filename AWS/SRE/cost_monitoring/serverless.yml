@@ -1,0 +1,13 @@
+org: "serverless-org-name"
+service: lambda
+
+provider:
+  name: aws
+  runtime: python3.12
+
+functions:
+  cost_monitoring:
+    handler: lambda_function.lambda_handler
+    events:
+      - sns:
+          arn: "topic arn"

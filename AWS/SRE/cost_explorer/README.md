@@ -5,14 +5,15 @@ With this lambda, a cost report for last 24 hrs is sent to a configured slack ch
 
 ## Deployment
 
-Configure serverless w/ AWS
+- Configure serverless w/ AWS
 ```bash
 serverless config credentials --provider aws --key YOUR_AWS_ACCESS_KEY --secret YOUR_AWS_SECRET_KEY
 ```
+- Edit 'org' field in `cost-explorer/serverless.yml`
 
 Deploy cost-explorer app
 ```bash
-cd cost-explorer
+cd ./cost_explorere/cost-explorer
 serverless deploy
 ```
 

@@ -1,6 +1,4 @@
-# "org" ensures this Service is used with the correct Serverless Framework Access Key.
-org: r0075h3ll
-# "service" is the name of this project. This will also be added to your AWS resource names.
+org: "serverless-org-name"
 service: cost-explorer
 
 provider:
