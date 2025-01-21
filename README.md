@@ -12,4 +12,5 @@ Our objective w/ this would be to generate a working POC for testing the reachab
 
 
 References
+- https://blog.shiftleft.io/
 - https://www.endorlabs.com/learn/5-types-of-reachability-analysis-and-which-is-right-for-you
