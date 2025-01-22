@@ -1,10 +1,10 @@
 import json
 
-import urllib3
+import requests
 
 import get_cost
 
-slack_webhook = "https://hooks.slack.com/services/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"
+slack_webhook = "<slack_webhook_url>"
 
 
 def lambda_handler(event, context):
@@ -14,5 +14,5 @@ def lambda_handler(event, context):
         "text": f"{usage_report}"
     }
 
-    request = urllib3.request('POST', f'{slack_webhook}', body=json.dumps(message_body),
+    request = requests.post(f'{slack_webhook}', data=json.dumps(message_body),
                               headers={"Content-Type": "application/json"})

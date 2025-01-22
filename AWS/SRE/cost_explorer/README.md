@@ -9,6 +9,7 @@ With this lambda, a cost report for last 24 hrs is sent to a configured slack ch
 ```bash
 serverless config credentials --provider aws --key YOUR_AWS_ACCESS_KEY --secret YOUR_AWS_SECRET_KEY
 ```
+- Attach an allow inline policy for `ce:GetCostAndUsage` to lambda's role
 - Edit 'org' field in `cost-explorer/serverless.yml`
 
 Deploy cost-explorer app

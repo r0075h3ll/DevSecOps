@@ -1,13 +1,23 @@
-org: "serverless-org-name"
+org: "<your_org_name>>"
 service: cost-explorer
 
 provider:
   name: aws
   runtime: python3.12
 
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    layer: true
+
 functions:
   hello:
     handler: handler.lambda_handler
+    layers:
+      - !Ref PythonRequirementsLambdaLayer
     events:
       - eventBridge:
           enabled: true
