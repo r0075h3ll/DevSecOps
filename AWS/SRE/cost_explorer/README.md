@@ -15,6 +15,7 @@ serverless config credentials --provider aws --key YOUR_AWS_ACCESS_KEY --secret 
 Deploy cost-explorer app
 ```bash
 cd ./cost_explorere/cost-explorer
+sls plugin install -n serverless-python-requirements
 serverless deploy
 ```
 
