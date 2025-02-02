@@ -1,0 +1,24 @@
+org: <your-org-name>
+service: lambda
+
+provider:
+  name: aws
+  runtime: python3.12
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+       - ec2:DescribeInstances
+       - ec2:StopInstances
+       - ec2:DescribesVolumes
+       - ec2:DeleteVolume
+       - ec2:CreateSnapshot
+      Resource: "*"
+
+functions:
+  ec2_monitor:
+    handler: lambda_handler.lambda_handler
+    events:
+      - eventBridge:
+          enabled: true
+          description: trigger ec2 monitoring lambda at 2 A.M. everyday
+          schedule: cron(00 02 * * ? *)
