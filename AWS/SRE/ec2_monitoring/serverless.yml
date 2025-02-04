@@ -9,7 +9,7 @@ provider:
       Action:
        - ec2:DescribeInstances
        - ec2:StopInstances
-       - ec2:DescribesVolumes
+       - ec2:DescribeVolumes
        - ec2:DeleteVolume
        - ec2:CreateSnapshot
       Resource: "*"
