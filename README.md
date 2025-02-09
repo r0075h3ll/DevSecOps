@@ -11,6 +11,10 @@ Our objective w/ this would be to generate a working POC for testing the reachab
 ![](https://i.ibb.co/XVSVFfq/map.png)
 
 
+To make possible of this analysis, `tree-sitter` and/or languages specific libraries can be used.
+
+
 References
 - https://blog.shiftleft.io/
+- https://tree-sitter.github.io/tree-sitter/
 - https://www.endorlabs.com/learn/5-types-of-reachability-analysis-and-which-is-right-for-you
