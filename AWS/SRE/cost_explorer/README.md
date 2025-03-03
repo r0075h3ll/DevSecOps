@@ -19,6 +19,10 @@ sls plugin install -n serverless-python-requirements
 serverless deploy
 ```
 
+### Screenshot
+
+![screenshot](https://i.ibb.co/jkrbFBCC/Screenshot-2025-03-03-233117.png "Slack Message")
+
 ## Upcoming
 
 - [ ] Get info about services that generated cost
