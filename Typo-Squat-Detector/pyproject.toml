@@ -1,0 +1,10 @@
+[project]
+name = "typo-squat-detector"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "certstream>=1.12",
+    "sentence-transformers>=5.0.0",
+]
