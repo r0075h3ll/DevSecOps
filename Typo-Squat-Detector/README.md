@@ -7,5 +7,7 @@ The basic idea behind this implementation is to use regularly updated CT logs so
 ### Usage
 
 ```commandline
-uv run Typo-Squat-Detector
+uv run python3 -m Typo-Squat-Detector -d fortesting -o output.json
 ```
+
+[Output](/Typo-Squat-Detector/output.json) provides with semantic similarity b/w your input and newly found domains via `crt.sh`.
