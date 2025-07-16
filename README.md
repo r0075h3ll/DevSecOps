@@ -10,3 +10,4 @@ This repository contains content curated/created by me, related to DevSecOps in 
 - [Source Composition Analysis](/Source-Composition-Analysis/)
 - [Semgrep Rules](/Semgrep-Rules/)
 - [JavaScript Security Series](/JavaScript-Security-Series/)
+- [Typo-Squat-Detector](/Typo-Squat-Detector/)
