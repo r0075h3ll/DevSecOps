@@ -1,4 +1,7 @@
 > 🚧 Work In Progress
+> To Do
+> - Option flag to choose b/w different models
+> - Clean JSON Output
 
 ### Introduction
 
