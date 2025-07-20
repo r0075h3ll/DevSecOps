@@ -2,7 +2,9 @@
 
 ### Introduction
 
-The basic idea behind this implementation is to use regularly updated CT logs sources to hunt for potential typo-squatting domains. Under the hood, we'll be using the power of semantics for improved detection.
+The basic idea behind this implementation is to use regularly updated CT logs sources to hunt for potential typo-squatting and look-alike domains. Under the hood, we'll be using the power of semantics for improved detection.
+
+Moving forward, a custom scraping framework can come handy, in case a domain scores high in terms of semantic similarity, to classify it as impersonation if a classifier trained on brand's data predicts so.
 
 ### Usage
 
