@@ -3,6 +3,8 @@
 > To Do
 > - Option flag to choose b/w different models
 > - Clean JSON Output
+> - Intergate https://github.com/d-Rickyy-b/certstream-server-go for live feed
+> - Add levenshtein distance check
 
 ### Introduction
 
