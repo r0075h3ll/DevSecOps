@@ -6,6 +6,12 @@
 > - Intergate https://github.com/d-Rickyy-b/certstream-server-go for live feed
 > - Add levenshtein distance check
 
+<div align="center">
+    <h2>
+    SWAT
+    </h2>
+</div>
+
 ### Introduction
 
 The basic idea behind this implementation is to use regularly updated CT logs sources to hunt for potential typo-squatting and look-alike domains. Under the hood, we'll be using the power of semantics for improved detection.
