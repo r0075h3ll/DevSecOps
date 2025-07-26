@@ -12,6 +12,8 @@
     </h2>
 </div>
 
+<h4 align="center">Monitor CT Logs for Brand Abuse w/ Semantic Search</h4>
+
 ### Introduction
 
 The basic idea behind this implementation is to use regularly updated CT logs sources to hunt for potential typo-squatting and look-alike domains. Under the hood, we'll be using the power of semantics for improved detection.
