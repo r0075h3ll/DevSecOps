@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-server
+  template:
+    metadata:
+      name: web-server-pod
+      labels:
+        app: web-server
+    spec:
+      containers:
+        - name: httpd-server
+          image: httpd:2.4.65
